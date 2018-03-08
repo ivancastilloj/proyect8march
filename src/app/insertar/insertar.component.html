@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Agregar nueva entrada</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveBook()" #bookForm="ngForm">
+        <div class="form-group">
+          <label for="name">Titulo</label>
+          <input type="text" class="form-control" [(ngModel)]="book.titulo" name="titulo" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Fecha</label>
+          <input type="date" class="form-control" [(ngModel)]="book.fecha" name="fecha" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Foto</label>
+          <input type="text" class="form-control" [(ngModel)]="book.foto" name="foto" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Descripción</label>
+          <input type="textarea" rows="100" cols="40" class="form-control" [(ngModel)]="book.description" name="description" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

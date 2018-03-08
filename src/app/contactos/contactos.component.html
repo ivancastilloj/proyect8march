@@ -1,0 +1,29 @@
+
+<h3>Create Contacto</h3>
+<div [hidden]="submitted" style="width: 300px;">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="pregunta">pregunta</label> <input type="text"
+				class="form-control" id="pregunta" required [(ngModel)]="contacto.pregunta"
+				name="pregunta">
+		</div>
+ 
+		<div class="form-group">
+			<label for="calendario">calendario</label> <input type="date"
+				class="form-control" id="calendario" required [(ngModel)]="contacto.calendario"
+				name="calendario">
+    </div>
+    <div class="form-group">
+			<label for="mail">mail</label> <input type="email"
+				class="form-control" id="mail" required [(ngModel)]="contacto.mail"
+				name="mail">
+		</div>
+ 
+		<button type="submit" class="btn btn-success">Submit</button>
+	</form>
+</div>
+ 
+<div [hidden]="!submitted">
+	<h4>You submitted successfully!</h4>
+	<button class="btn btn-success" (click)="newCustomer()">Add</button>
+</div>
